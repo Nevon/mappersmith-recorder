@@ -4,6 +4,8 @@
 
 [Mappersmith](https://github.com/tulios/mappersmith) middleware to record requests and responses as [HAR](http://www.softwareishard.com/blog/har-12-spec/) files. These files are simple JSON files that can either be read directly or loaded into a HAR viewer or even the browser's own developer tools.
 
+> Note that this middleware currently only works in NodeJS, as it relies on being able to write files to the filesystem. You can implement a custom persistence class that works in a browser environment, but it does not come out of the box.
+
 ![Screenshot of HAR viewer](assets/screenshot.png)
 
 ## Installation
