@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Session saves with the current timestamp as a suffix 1`] = `
+Object {
+  "log": Log {
+    "browser": undefined,
+    "comment": undefined,
+    "creator": Creator {
+      "comment": undefined,
+      "name": "mappersmith-recorder",
+      "version": "0.0.1",
+    },
+    "entries": Array [],
+    "pages": Array [],
+    "version": "1.2",
+  },
+}
+`;
