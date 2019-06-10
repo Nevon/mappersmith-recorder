@@ -17,9 +17,14 @@
   "scripts": {
     "test": "jest",
     "test:watch": "yarn test --watch",
+    "lint": "eslint .",
     "format": "find . -path ./node_modules -prune -o -name '*.js' -print0 | xargs -0 ./node_modules/.bin/prettier --write"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.8.0",
     "mappersmith": "^2.28.0",
     "mockdate": "^2.0.2",
