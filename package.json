@@ -1,6 +1,6 @@
 {
   "name": "mappersmith-recorder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Records requests and responses in HAR format",
   "main": "index.js",
   "repository": "https://github.com/Nevon/mappersmith-recorder",
