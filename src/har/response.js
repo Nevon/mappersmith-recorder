@@ -12,7 +12,7 @@ module.exports = response => {
     ),
     content: new HAR.PostData({
       text: response.rawData(),
-      mimeType: response.headers()["content-type"]
+      mimeType: response.header("content-type")
     })
   });
 };

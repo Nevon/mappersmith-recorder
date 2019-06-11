@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Recorder Middleware includes post data 1`] = `
+PostData {
+  "comment": undefined,
+  "mimeType": "application/octet-stream",
+  "params": Array [],
+  "text": "email=tyler%40statuspage.io&incident=n4zblpn6p2kq",
+}
+`;
+
 exports[`Recorder Middleware records each request and response 1`] = `
 Object {
   "github-1560153601000.har": Object {

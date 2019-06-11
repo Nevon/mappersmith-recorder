@@ -4,6 +4,7 @@ const { RecorderMiddleware, Session } = require("../");
 const MockPersistence = require("./helpers/mockPersistence");
 const createClient = require("./helpers/client");
 const statusFixture = require("./helpers/fixtures/currentStatus");
+const createSubscriberFixture = require("./helpers/fixtures/createSubscriber");
 
 describe("Recorder Middleware", () => {
   beforeEach(() => {
@@ -46,5 +47,32 @@ describe("Recorder Middleware", () => {
     session.reset();
 
     expect(persistence.getFiles()).toMatchSnapshot();
+  });
+
+  it("includes post data", async () => {
+    const persistence = new MockPersistence();
+    const session = new Session({ persistence, name: "github" });
+
+    const client = createClient({
+      middleware: [RecorderMiddleware({ session })]
+    });
+
+    const requestParams = {
+      body: { email: "tyler@statuspage.io", incident: "n4zblpn6p2kq" }
+    };
+    mockClient(client)
+      .resource("Subscribers")
+      .method("create")
+      .with(requestParams)
+      .status(201)
+      .response(createSubscriberFixture);
+
+    await client.Subscribers.create(requestParams);
+
+    await session.save();
+    expect(
+      persistence.getFiles()["github-1560153600000.har"].log.entries[0]._request
+        .postData
+    ).toMatchSnapshot();
   });
 });

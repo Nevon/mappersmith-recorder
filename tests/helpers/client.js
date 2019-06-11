@@ -15,6 +15,12 @@ const manifest = {
       all: {
         path: "/api/v2/incidents.json"
       }
+    },
+    Subscribers: {
+      create: {
+        path: "/api/v2/subscribers.json",
+        method: "post"
+      }
     }
   }
 };

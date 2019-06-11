@@ -1,4 +1,5 @@
 const HAR = require("har");
+const { toQueryString } = require("mappersmith/utils");
 
 module.exports = response => {
   const request = response.request();
@@ -19,6 +20,12 @@ module.exports = response => {
             const [key, value] = param.split("=");
             return { name: key, value };
           })
+      : null,
+    postData: request.body()
+      ? new HAR.PostData({
+          mimeType: request.header("content-type"),
+          text: toQueryString(request.body())
+        })
       : null
   });
 };
