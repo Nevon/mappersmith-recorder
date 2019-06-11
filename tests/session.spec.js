@@ -15,8 +15,8 @@ describe("Session", () => {
     const persistence = new MockPersistence();
     const session = new Session({ persistence, name: "test" });
 
-    await session.save();
+    const filePath = await session.save();
 
-    expect(persistence.getFiles()["test-1560153600000.har"]).toMatchSnapshot();
+    expect(persistence.getFiles()[filePath]).toMatchSnapshot();
   });
 });

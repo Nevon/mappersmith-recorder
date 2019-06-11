@@ -20,6 +20,8 @@ module.exports = class Persistence {
   }
 
   async save({ file, name }) {
-    await writeFileAsync(this.fullPath(name), JSON.stringify(file, null, 2));
+    const filePath = this.fullPath(name);
+    await writeFileAsync(filePath, JSON.stringify(file, null, 2));
+    return filePath;
   }
 };

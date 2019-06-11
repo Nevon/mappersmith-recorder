@@ -17,7 +17,7 @@ module.exports = class Session {
 
   async save() {
     const name = `${this.name}-${new Date().getTime()}.har`;
-    await this.persistence.save({ file: this.log, name });
+    return await this.persistence.save({ file: this.log, name });
   }
 
   reset() {

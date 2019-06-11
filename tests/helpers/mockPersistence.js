@@ -13,5 +13,6 @@ module.exports = class MockPersistence {
 
   async save({ file, name }) {
     this.files[name] = file;
+    return name;
   }
 };

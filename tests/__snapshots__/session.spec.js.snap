@@ -8,7 +8,7 @@ Object {
     "creator": Creator {
       "comment": undefined,
       "name": "mappersmith-recorder",
-      "version": "0.0.1",
+      "version": "0.0.2",
     },
     "entries": Array [],
     "pages": Array [],
